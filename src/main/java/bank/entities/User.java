@@ -2,6 +2,8 @@ package bank.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,9 +19,10 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	private int balance;
+	private BigDecimal balance;
 
 	@Temporal(TemporalType.DATE)
 	private Date birthdate;
@@ -35,10 +38,11 @@ public class User implements Serializable {
 	private String password;
 
 	//bi-directional many-to-one association to Transaction
-	@OneToMany(mappedBy="user")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
 	private List<Transaction> transactions;
 
 	public User() {
+		this.transactions = new ArrayList<Transaction>();
 	}
 
 	public int getId() {
@@ -49,11 +53,11 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public int getBalance() {
+	public BigDecimal getBalance() {
 		return this.balance;
 	}
 
-	public void setBalance(int balance) {
+	public void setBalance(BigDecimal balance) {
 		this.balance = balance;
 	}
 

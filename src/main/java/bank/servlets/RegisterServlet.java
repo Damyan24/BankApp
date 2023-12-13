@@ -1,6 +1,7 @@
 package bank.servlets;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -72,7 +73,8 @@ public class RegisterServlet extends HttpServlet {
             user.setPassword(BCrypt.hashpw(password.trim(), BCrypt.gensalt(12)));
             user.setFirstName(firstName);
             user.setLastName(lastName);
-            user.setBalance(0);
+            BigDecimal value = new BigDecimal(0);
+            user.setBalance(value);
 
             try {
                 user.setBirthdate(new SimpleDateFormat("yyyy-MM-dd").parse(birthday));

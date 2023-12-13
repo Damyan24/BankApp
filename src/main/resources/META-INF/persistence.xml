@@ -12,10 +12,13 @@
         <!-- Entity classes -->
         <class>bank.entities.User</class>
         <class>bank.entities.Transaction</class>
+        
       
 
         <!-- Database properties -->
         <properties>
+		
+
           <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bank"/>
         <property name="javax.persistence.jdbc.user" value="root"/>

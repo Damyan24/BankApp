@@ -35,9 +35,9 @@
             <br/>
             <input class="button" type="submit" value="Submit"/>
         </form>
-         <c:if test="${not empty errorMessages}">
+         <c:if test="${not empty TransferError}">
     <div style='color: red; font-weight:bold; width:100%; text-align:center;'>
-        - ${errorMessages[0]}<br>
+        - ${TransferError}<br>
     </div>
 </c:if>
     </div>

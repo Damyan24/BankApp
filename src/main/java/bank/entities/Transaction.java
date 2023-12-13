@@ -17,6 +17,7 @@ public class Transaction implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
 	@Column(name="transaction_amount")
@@ -28,16 +29,30 @@ public class Transaction implements Serializable {
 
 	@Column(name="transaction_type")
 	private String transactionType;
+	
+
+	
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
 	private User user;
+	
+	@Column(name = "receiver")
+	private String receiver;
 
 	public Transaction() {
 	}
 
 	public long getId() {
 		return this.id;
+	}
+	
+	public String getReceiver() {
+		return receiver;
+	}
+
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
 	}
 
 	public void setId(long id) {
@@ -72,8 +87,8 @@ public class Transaction implements Serializable {
 		return this.user;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUser(User receiver) {
+		this.user = receiver;
 	}
 
 }
