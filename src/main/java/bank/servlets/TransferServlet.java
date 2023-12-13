@@ -49,7 +49,11 @@ public class TransferServlet extends HttpServlet {
         }
 
       
-        
+        if(email.equals(sender.getEmail())){
+        	error = "Can't send money to yourself";
+          	 request.setAttribute("TransferError", error);
+          	request.getRequestDispatcher("/views/main.jsp").forward(request, response);
+        }
         
         
         
