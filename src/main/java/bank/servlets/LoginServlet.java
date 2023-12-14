@@ -1,6 +1,7 @@
 package bank.servlets;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -48,6 +49,7 @@ public class LoginServlet extends HttpServlet {
             if (user != null && BCrypt.checkpw(password, user.getPassword())) {
                 HttpSession session = request.getSession();
                 
+              
                
                 session.setAttribute("User", user);
                 return true;

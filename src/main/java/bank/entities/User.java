@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -102,7 +103,15 @@ public class User implements Serializable {
 	}
 
 	public List<Transaction> getTransactions() {
-		return this.transactions;
+		if(this.transactions.size() == 0) {
+			return this.transactions;
+		}
+		
+		List<Transaction> reverse = this.transactions;
+		
+		Collections.reverse(reverse);
+		
+		return reverse;
 	}
 
 	public void setTransactions(List<Transaction> transactions) {

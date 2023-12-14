@@ -1,16 +1,17 @@
-/* Reset some default styles */
+
 body, h1, p {
     margin: 0;
     padding: 0;
 }
 
-/* Body styles */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
+    height: 100%;
 }
 
-/* Header styles */
+
 header {
     background-color: #333;
     color: #fff;
@@ -44,7 +45,7 @@ header .logo p {
     font-weight: bold;
 }
 
-/* Form styles */
+
 h1 {
     text-align: center;
     margin-top: 30px;
@@ -90,7 +91,7 @@ span{
 
 
 
-/* Signup link styles */
+
 .signup {
     text-align: center;
     margin-top: 20px;
@@ -114,6 +115,7 @@ span{
 
 
 .left{
+	height: 90%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -153,7 +155,7 @@ span{
 	flex-direction: column;
 	justify-content: center;
 	border-top: 1px black solid;
-	padding-bottom: 95px;
+	padding-bottom: 20px;
 	height: 100%;
 	margin-top: 100px;
 	
