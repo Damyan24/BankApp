@@ -16,7 +16,7 @@ Login page with email and password validation
 
 
 # 3.Main page
-!![image](https://github.com/Damyan24/BankApp/assets/117590469/c67c1763-4e6d-4cc4-be7a-7e227ef7695b)
+![image](https://github.com/Damyan24/BankApp/assets/117590469/c96382ed-7d36-4586-95fa-acd6be659a72)
 Main page with info about your account, form for sending funds and transfer list that include up to 10 of your last transactions
 
 
